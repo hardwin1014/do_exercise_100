@@ -22,6 +22,7 @@ describe('数组旋转', () => {
         const res = rotate2(arr, k)
         expect(res).toEqual(arr) // 断言
     })
+    // 如果k不是数字的话,为NAN  NAN<0  false
     it('k不是数字',() => {
         const arr = [1,2,3,4,5,6,7]
         const k = 'abc'
