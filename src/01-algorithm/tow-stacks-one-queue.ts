@@ -50,11 +50,11 @@ export class MyQueue{
     }
 }
 // 功能测试
-const q = new MyQueue()
-q.add(111)
-q.add(2)
-q.add(3)
-q.add(4)
-console.info(q.length)
-console.log(q.delete())
-console.info(q.length)
+// const q = new MyQueue()
+// q.add(111)
+// q.add(2)
+// q.add(3)
+// q.add(4)
+// console.info(q.length)
+// console.log(q.delete())
+// console.info(q.length)
