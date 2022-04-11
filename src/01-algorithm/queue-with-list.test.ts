@@ -11,7 +11,6 @@ describe('链表实现队列',() => {
         q.add(300)
         q.add(400)
         expect(q.length).toBe(4)
-        expect(q.length).toBe(3)
     })
     it('delete',() => {
         const q = new MyQueue()

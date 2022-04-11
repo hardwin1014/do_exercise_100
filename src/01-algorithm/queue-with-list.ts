@@ -1,15 +1,16 @@
 /*
 * @description 用链表实现队列
-*
+*从末尾进，头出
 * */
 
 interface IListNode{
     value: number,
-    // next?: IListNode
+    // next?: IListNode 或者
     next: IListNode | null
 }
 
-export class MyQueue{
+export class MyQueue {
+    // 定义头尾和长度
     private head: IListNode | null = null
     private tail: IListNode | null = null
     private len = 0
@@ -30,7 +31,7 @@ export class MyQueue{
             this.head = newNode
         }
 
-        // 处理tail
+        // 处理tail，保存最后的节点，
         const tailNode = this.tail
         if(tailNode){
             // 如果最后一个节点有值，就指向新的节点
@@ -57,6 +58,7 @@ export class MyQueue{
         // 记录长度
         this.len --
 
+        // 返回删除的值
         return value
     }
 
