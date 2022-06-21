@@ -1,54 +1,56 @@
 /*
 * @description 用链表实现队列
-*从末尾进，头出
+* 从末尾进，头出
+
+ 链表实现队列要比数组性能好
 * */
 
-interface IListNode{
+interface IListNode {
     value: number,
     // next?: IListNode 或者
     next: IListNode | null
 }
 
 export class MyQueue {
-    // 定义头尾和长度
+    // 定义头尾和长度，队列有出有进，所以要记录头和尾
     private head: IListNode | null = null
     private tail: IListNode | null = null
     private len = 0 // length单独存储
 
     /*
-    * 入队  在tail入队 从head出队
+    * 入队  在tail入队 从head出队，否则出队时tail不好定位
     * @param n number
     * */
-    add(n: number){
+    add(n: number) {
         // 定义链表的节点的形式
         const newNode: IListNode = {
             value: n,
-            next:null
+            next: null
         }
 
-        // 处理head
-        if(this.head == null){
+        // 处理head，如果当前的链表还是空的，那么久处理一下newNode
+        if (this.head == null) {
             this.head = newNode
         }
 
         // 处理tail，保存最后的节点，
         const tailNode = this.tail
-        if(tailNode){
+        if (tailNode) {
             // 如果最后一个节点有值，就指向新的节点
             tailNode.next = newNode
         }
-        // 把当前的tail断开，指向newNode
+        // tail一直在指向最后一个 把当前的tail断开，指向newNode
         this.tail = newNode
 
         // 记录长度
-        this.len ++
+        this.len++
     }
 
     // head 出队, 正常删除是number，删除，没了就是null
-    delete(): number | null{
+    delete(): number | null {
         const headNode = this.tail
-        if(headNode == null) return null
-        if(this.len <= 0) return null
+        if (headNode == null) return null
+        if (this.len <= 0) return null
 
         // 取值
         const value = headNode.value
@@ -57,15 +59,15 @@ export class MyQueue {
         this.head = headNode.next
 
         // 记录长度
-        this.len --
+        this.len--
 
         // 返回删除的值
         return value
     }
 
-    get length(): number{
+    get length(): number {
         // lenth要单独存储，不能遍历链表来获取（否则复杂度太高O(n)）
-      return this.len
+        return this.len
     }
 }
 
@@ -83,10 +85,10 @@ export class MyQueue {
 // 性能测试
 const q1 = new MyQueue()
 console.time('queue with list')
-for(let i = 0; i < 10*10000; i++){
+for (let i = 0; i < 10 * 10000; i++) {
     q1.add(i)
 }
-for(let i = 0; i < 10*10000;i++){
+for (let i = 0; i < 10 * 10000; i++) {
     q1.delete()
 }
 console.timeEnd('quque with list')
@@ -94,10 +96,10 @@ console.timeEnd('quque with list')
 const q2 = []
 
 console.time('queue with arr')
-for(let i = 0; i < 10*10000; i++){
+for (let i = 0; i < 10 * 10000; i++) {
     q2.push(i)
 }
-for(let i = 0; i < 10*10000;i++){
+for (let i = 0; i < 10 * 10000; i++) {
     q2.shift()
 }
 console.timeEnd('quque with arr')

@@ -1,6 +1,5 @@
 /**
  * @description MPA webpack 配置
- * @author 双越老师
  */
 
 const path = require('path');
