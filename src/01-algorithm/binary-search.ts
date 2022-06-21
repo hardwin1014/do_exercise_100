@@ -73,11 +73,38 @@ export function binarySearch2(arr: number[], target: number, startIndex?: number
 
 
 // 功能测试
-const arr = [ 10, 20, 30, 40, 50, 60 ];
+const arr = [ 10, 20, 30, 40, 50, 60, 70,80,90,100,110,120];
 const target = 10;
 console.log(binarySearch2(arr, target));
 
 
 // 递归和循环
-// 数量级
+// 数量级 复杂度O(logn)
+/**
+ * 递归-代码逻辑更加清晰
+ * 非递归-性能更好
+ * 时间复杂度O(logn) -非常快
+ *
+ * 凡有序，必二分！！！
+ * 凡二分，时间复杂度必包含O(logn)
+ * */
+
 // 性能测试
+console.time('binarySearch1')
+for(let i = 0; i< 100*10000;i++){
+	binarySearch1(arr,target)
+}
+console.timeEnd('binarySearch1')
+
+
+console.time('binarySearch2')
+for(let i = 0; i< 100*10000;i++){
+	binarySearch2(arr,target)
+}
+console.timeEnd('binarySearch2')
+
+
+/*
+binarySearch1: 14.26904296875 ms
+binarySearch2: 25.300048828125 ms
+* */

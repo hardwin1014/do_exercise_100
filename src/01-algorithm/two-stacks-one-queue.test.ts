@@ -1,7 +1,7 @@
 /*
 * @description 两个栈  一个队列
 * */
-import { MyQueue } from "./tow-stacks-one-queue";
+import { MyQueue } from "./two-stacks-one-queue";
 
 describe('两个栈，一个队列',() => {
     it('add and length',() => {
