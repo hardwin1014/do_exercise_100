@@ -22,6 +22,31 @@
  * B树
  * 物理上是多叉树，但是逻辑上是二叉树
 * */
+
+/**
+ * 堆和二叉树的区别
+ * 堆的物理结构是数组，逻辑结构是二叉树
+ *
+ * 查询比BST慢
+ * 增删比BST快，维持平衡更快
+ * 但是整体的时间复杂度都在O(logn)级别,即树的高度
+ *
+ * 堆可以用数组表示，(从小到大)
+ * const heap = [-1, 10, 14, 25, 33, 81, 82, 99] // 忽略0节点
+ *
+ * 节点关系
+ * const parentIndex = Math.floor(i/2)
+ * const leftIndex = 2 * i
+ * const rightIndex = 2 * i + 1
+ *
+ *
+ * 堆的使用场景
+ * 特别适合“堆栈模型”
+ * 堆的数据，都是在栈中引用的，不需要从root遍历
+ * 堆恰巧是数组形式，根据栈的地址,可用O(1)找到目标
+ */
+
+
 export interface ITreeNode{
     value: number,
     left: ITreeNode | null
