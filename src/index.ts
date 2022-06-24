@@ -9,4 +9,6 @@
 // import './01-algorithm/fibonacci'
 // import './01-algorithm/move-zero'
 // import './01-algorithm/continuous-char'
-import './01-algorithm/quick.sort'
+// import './01-algorithm/quick.sort'
+
+import './01-algorithm/palindrome-number'
