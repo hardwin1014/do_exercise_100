@@ -11,4 +11,5 @@
 // import './01-algorithm/continuous-char'
 // import './01-algorithm/quick.sort'
 // import './01-algorithm/palindrome-number'
-import './01-algorithm/thousands-format'
+// import './01-algorithm/thousands-format'
+import './01-algorithm/switch-letter-case'
