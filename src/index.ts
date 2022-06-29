@@ -1,3 +1,4 @@
+// 基础算法
 // import './01-algorithm/array-rotate'
 // import './01-algorithm/match-bracket'
 // import './01-algorithm/two-stacks-one-queue'
@@ -12,7 +13,7 @@
 // import './01-algorithm/quick.sort'
 // import './01-algorithm/palindrome-number'
 // import './01-algorithm/thousands-format'
-import './01-algorithm/switch-letter-case'
+// import './01-algorithm/switch-letter-case'
 
 
 /**
@@ -27,3 +28,6 @@ import './01-algorithm/switch-letter-case'
  * 而改为树,时间复杂度降低到O(m)（m是单词的长度）
  * PS: 哈希表(对象)通过key查询，时间复杂度为O(1)
 */
+
+// 手写系列
+import './02-write-code/array-flatten'
