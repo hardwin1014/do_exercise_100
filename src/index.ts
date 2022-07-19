@@ -32,4 +32,5 @@
 // 手写系列
 // import './02-write-code/array-flatten'
 // import './02-write-code/array-flatten-deep'
-import './02-write-code/get-type'
+// import './02-write-code/get-type'
+import './02-write-code/new'
